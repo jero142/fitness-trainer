@@ -9,6 +9,7 @@ Features
 - **Audio bell** sounds at the start and end of each timed exercise
 - Visual countdown before each exercise begins
 - Add or remove exercises to your cart dynamically
+- Filter exercises by muscle groups
 - Mobile-friendly with a notebook-style interface
 - Highlights primary and secondary muscle groups for each exercise
 
