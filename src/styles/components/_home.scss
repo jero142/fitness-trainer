@@ -1,0 +1,6579 @@
+.programm-container {
+  // border: 2px solid rgb(32, 255, 62);  
+  display: grid;
+  width: 100%;
+  height: 90vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+}
+
+
+.exercises-container {
+  display: grid;
+  // border: 2px solid rgb(255, 42, 227);
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr;
+  color: rgb(255, 27, 27);   
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  font-size: 1rem;
+  text-transform: capitalize;
+  word-spacing: 1rem;
+  letter-spacing: 5px;
+  padding: 30px 60px 60px 90px;
+  position: relative;
+  
+}
+
+
+.exercises-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: rgb(76, 255, 53);
+  border-radius: 20px;
+  justify-content: space-between;
+  background: linear-gradient(30deg,rgba(17, 103, 184, 1) 0%, rgba(87, 158, 199, 1) 50%, rgba(170, 213, 242, 1) 100%);
+  padding: 15px 20px 10px 20px;
+  position: relative;
+  margin: 0;
+}
+
+.card-exercises-screen {
+  width: 68%;
+  height: 50%;
+  border-radius: 20px;
+  background: linear-gradient(60deg,rgb(20, 20, 20) 0%, rgb(68, 68, 68) 50%, rgb(133, 133, 133) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+ 
+  
+ 
+}
+
+
+.gifScreen {
+  width: 90%;
+  max-height:100%;
+  object-fit: cover;
+  position: absolute;
+  visibility: hidden;
+  border-radius: 20px;
+  z-index: 5;
+  
+}
+
+body:has(.buttonproductcartstyle:hover) .gifScreen  {
+
+  transition: 0.2s;
+  visibility: visible;
+}
+
+
+.select-exercise-overlay {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+
+  .select-text {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px black;
+    margin-bottom: 10px;
+  }
+
+  .arrow-indicator {
+    font-size: 7rem;
+    color: white;
+    animation: bounceArrow 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.productsStyle {
+  display: grid;
+  grid-template-columns: repeat(4,100px);
+  grid-template-rows: repeat(3, 90px);
+  margin: 10px 0 0 15px;
+  
+
+}
+
+.productcartStyle {
+  background-color: rgb(255, 107, 132);
+
+
+}
+
+.buttonproductcartstyle{
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  cursor: pointer; 
+
+}
+
+.buttonproductcartstyle:hover {
+  border: 2px solid greenyellow;
+  transition: 0.2s;
+}
+
+.selected {
+  border: 2px solid  greenyellow;
+  background-color: whitesmoke;
+}
+
+.imageproductcartstyle {
+  width: 75px;
+  height: 75px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+
+   
+}
+
+.paginationproductcart {
+  display: grid;
+  grid-template-columns: 13% 15% 28% 10% 1% 10%;
+  grid-template-rows: 1fr ;
+  width: 100%;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.buttonproductcarleftcontainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonproductcartleft {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 35px;
+  color:  rgb(0, 132, 255);
+  font-size: 12rem;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 3px solid rgb(0, 132, 255);
+  rotate: 90deg;
+  
+}
+
+.page-info-home {
+  font-size: 1rem;
+  font-weight: 700;
+  color: whitesmoke;
+  word-spacing: 2px;
+}
+
+.buttonproductcarrightcontainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.buttonproductcartright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 35px;
+  color:  rgb(0, 132, 255);
+  font-size: 12rem;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 3px solid rgb(0, 132, 255);
+  rotate: -90deg;
+  
+}
+
+.clear-cart-button-container {
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+ 
+}
+
+.clear-cart-button {
+
+  padding: 0.5rem 1rem;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.clear-cart-button:hover {
+  background-color: darkred;
+}
+
+.postit-container {
+  
+  color: rgb(133, 50, 2);
+  
+  width: 100%;
+  height: 80vh;
+  // border: 2px solid rgb(255, 203, 59);
+  border-radius: 10px;
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px 0 0 0;
+ 
+}
+
+.postitCartStyle {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  // border: 2px solid green;
+  width: 300px;
+  height: 300px;
+filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.63));
+}
+
+.postit-total-selected {
+  color: rgb(0, 132, 255);
+  font-size: 2rem;
+  position: absolute;
+  margin-top: 15%;
+  margin-right: 7%;
+  font-weight: 700;
+  rotate: -10deg;
+  word-spacing: 2px;
+}
+
+.postitSpanstyle {
+  color: rgb(0, 132, 255);
+  font-size: 6rem;
+  position: absolute;
+  margin-top: 20%; 
+  rotate: -10deg;
+}
+
+
+.floating-indicator-postit {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, 0);
+  font-size: 80px;
+  font-weight: bold;
+  z-index: 100;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.floating-indicator-postit.plus {
+  color: #00c853;
+  animation-name: floatToPostitUp;
+}
+
+.floating-indicator-postit.minus {
+  color: #d50000;
+  animation-name: floatToPostitDown;
+}
+
+@keyframes floatToPostitUp {
+  0% {
+    transform: translate(50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, -40px);
+    opacity: 0;
+  }
+}
+
+@keyframes floatToPostitDown {
+  0% {
+    transform: translate(50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, 40px);
+    opacity: 0;
+  }
+}
+
+.filter-container {
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-template-rows: 4fr ;
+  gap: 10px;
+  padding: 10px;
+}
+
+
+.filter-button {
+  background: linear-gradient(30deg,rgb(9, 59, 105) 0%, rgb(10, 135, 207) 50%, rgb(86, 174, 233) 100%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: whitesmoke;
+  height: 40px;
+  
+}
+
+.filter-button:hover {
+  border: 2px solid cyan;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  color: rgb(189, 255, 56);
+  border-color: #07ffea;
+ 
+}
+
+.clear-filters {
+  display: flex;
+  justify-content: center;
+ 
+ 
+}
+
+.clear-filters-button {
+  background-color: crimson;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 1.5rem;
+  height: 40px;
+  width: 90%;
+  text-transform: uppercase;
+
+}
+
+.clear-filters-button:hover {
+  background-color: darkred;
+  cursor: pointer;
+  
+}
+
+
+
+
+
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation: typing 0.5s steps(30, end), blink 0.75s step-end infinite;
+    font-size: 1.6rem;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+  
+
+  body:has(.buttonproductcartstyle:hover) .exercise-names  {
+    transition: 0.2s;
+    visibility: visible;
+  }
+
+    .set-exercises-button-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-active {
+      position: relative;
+    
+      &::after {
+        content: "";
+        height: 4px;
+        width: 0;
+        background: rgb(0, 0, 255);
+        position: absolute;
+        border-radius: 10px;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-animation: anim 0.3s ease forwards;
+        animation: anim 0.6s ease forwards;
+    
+        @-webkit-keyframes anim {
+          to {
+            width: 100%;
+          }
+        }
+        @keyframes anim {
+          to {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .diagram-container {
+      display: grid;
+      flex-direction: column;
+      align-items: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10% 90%;
+      color: rgb(63, 23, 23);
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+      font-size: 1rem;
+      text-transform: capitalize;
+      word-spacing: 1rem;
+      letter-spacing: 5px;
+      padding: 30px 90px 90px 60px;
+    
+    
+    
+      .anatomy-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 130, 58);
+        height: 100%;
+        // border: 2px solid blue;
+        border-radius: 10px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    
+      #image-muscles {
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    
+      .sticker-diagramm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(133, 50, 2);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    
+      #image-sticker {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    
+      .name-exercise-sticker {
+        position: absolute;
+        color: rgb(0, 132, 255);
+        word-spacing: 2px;
+        font-size: 1.2rem;
+      }
+    
+      .exercise-primary-muscles,
+      .exercise-secondary-muscles,
+      .exercise-names {
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        position: absolute;
+        z-index: 10;
+      }
+    
+      .exercise-primary-muscles,
+      .exercise-secondary-muscles {
+        opacity: 0%;
+      }
+    
+      .exercise-names {
+        visibility: hidden;
+      }
+    }
+    
+    body:has(.buttonproductcartstyle:hover) .exercise-primary-muscles {
+      animation: exercise-primary-muscles 0.7s infinite linear;
+    }
+    
+    body:has(.buttonproductcartstyle:hover) .exercise-secondary-muscles {
+      animation: exercise-secondary-muscles 1s infinite linear;
+    }
+    
+    body:has(.buttonproductcartstyle:hover) .exercise-names {
+      transition: 0.2s;
+      visibility: visible;
+    }
+    
+
+    @keyframes exercise-primary-muscles {
+      50% {
+        opacity: 100%;
+      }
+      100% {
+        opacity: 0%;
+      }
+    }
+    
+    @keyframes exercise-secondary-muscles {
+      50% {
+        opacity: 100%;
+      }
+      100% {
+        opacity: 0%;
+      }
+    }
+
+
+
+    .set-exercises-button {
+      background-color: rgb(0, 132, 255);
+      color: whitesmoke;
+      height: 100%;
+      padding: 2px 10px;
+    }
+    
+    .set-exercises-button:hover {
+      border: rgb(98, 179, 255);
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    ////////////RESPONSIVE//////////////
+ 
+    @media (max-width: 1800px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        // border: 2px solid rgb(255, 42, 227);
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 2vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 67%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 2rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4vw);
+        grid-template-rows: repeat(3, 9vh);
+        padding:  0 3vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 15px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 15px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 14% 20% 37% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 3rem;
+        height: 45px;
+        width: 55px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1.5rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 3rem;
+        height: 45px;
+        width: 55px;
+      }
+      .clear-cart-button {
+        transform: translateX(-3.1vw);
+        font-size: 1.2rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 0vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2.5vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.6vw;
+        margin-top: 10.7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(2vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 1.2rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(0.1vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 1.2rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.3rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 1600px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        // border: 2px solid rgb(255, 42, 227);
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 28vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 68%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 5vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 3.6vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 2.8vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 13% 20% 38% 25% 20% 3%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-2.5vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.6vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2.5vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.1vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.4vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 1400px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        // border: 2px solid rgb(255, 42, 227);
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 28vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 78%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.1vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 1.5vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.2vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.5vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.6vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.3vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 1300px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 28vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.5vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 1vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.2vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.5vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.6vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.3vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 1290px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        // border: 2px solid rgb(255, 42, 227);
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 31vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 80%;
+        height: 53%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.5vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 2.1vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.3vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.5vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2.5vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.5vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.1vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 1270px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 31vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 80%;
+        height: 53%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.5vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 2vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.3vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.5vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2.5vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.7vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.2vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 1200px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 31vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 81%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 7vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.5vw);
+        grid-template-rows: repeat(3, 7.5vh);
+        padding: 0 1.9vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.2vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 0.7vw;
+        width: 100%;
+        height: 23vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.5vw;
+        margin-top: 9vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.2vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 15vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 1150px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 31vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 7vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5.5vw);
+        grid-template-rows: repeat(3, 9vh);
+        margin-right: 3.9vw;
+
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 18% 20% 23% 25% 25% 5%;
+        padding: 0 0vw;
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-2.2vw);
+        font-size: 0.9rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 0vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.1vw;
+        margin-top: 2vh;
+        font-size: 1.6rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.3vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(1.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.1vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 20vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+       
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }  
+    @media (max-width: 1100px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 90%;
+        height: 43%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:90%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 7vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5.5vw);
+        grid-template-rows: repeat(3, 8vh);
+        padding: 0 0vw;
+        margin-right: 1.2vw;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 27% 25% 30% 15%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-2vw);
+        font-size: 0.9rem;
+        padding: 1vh 0.5vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -1vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2vh;
+        font-size: 1.5rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.6vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(0.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-1vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.9rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 20vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }   
+    @media (max-width: 992px) {
+      .programm-container {
+        display: grid;
+        width: 100%;
+        height: 90vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+      }
+    
+      .exercises-container {
+        display: grid;
+        
+        grid-template-columns: 65% 35%;
+        grid-template-rows: 1fr;
+        color: rgb(255, 27, 27);   
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        font-size: 1rem;
+        text-transform: capitalize;
+        word-spacing: 1rem;
+        letter-spacing: 5px;
+        padding: 5vh 2vw;
+        position: relative;
+        
+      }
+      
+      .exercises-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30vw;
+        height: 100%;
+        color: rgb(76, 255, 53);
+        border-radius: 20px;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+      }
+      
+
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 90%;
+        height: 43%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        max-height:100%;
+        object-fit: cover;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 20px;
+        z-index: 5;
+        
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1.5rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 7vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5.5vw);
+        grid-template-rows: repeat(3, 8vh);
+        padding: 0 0vw;
+        margin-right: 1.2vw;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 27% 25% 30% 15%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(-1.9vw);
+        font-size: 0.9rem;
+        padding: 1vh 0.5vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -1vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 0.3vw;
+        margin-top: 2vh;
+        font-size: 1.5rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 0.6vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 39.4vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(0.5vw);
+        height: 6vh;
+        width: 11vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-1vw);
+        width: 11vw;
+        height: 6vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.9rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(3vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 90vh;
+        padding: 20vh 5vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(0vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 980px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 47vh;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 18vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 3.5vw);
+        grid-template-rows: repeat(3, 4.3vh);
+        padding: 0 5.2vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 13% 17% 39% 2% 33% 0%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(3.95vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -12vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7.6vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-10vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-11.75vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.8rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(-11vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0vw);
+        width: 100%;
+        height: 50%;
+        padding: 3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 925px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 47vh;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 20.5vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 7vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 3.5vw);
+        grid-template-rows: repeat(3, 4vh);
+        padding: 0 5.8vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 13% 17% 39% 2% 33% 0%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(4.2vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -12vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7.6vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-10vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-11.54vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.8rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(-11vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-2vw);
+        width: 100%;
+        height: 50%;
+        padding: 3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 850px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 45vh;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 22vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 4.5vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4vw);
+        grid-template-rows: repeat(3, 4vh);
+        padding: 0 4.9vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 11.5% 18% 41% 2% 32% 0%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(4.9vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -12vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.5vw;
+        margin-top: 3vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7.6vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-10vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-11.54vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.8rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(-9vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-2vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    
+    @media (max-width: 800px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 45vh;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 24vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 4.5vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4vw);
+        grid-template-rows: repeat(3, 4vh);
+        padding: 0 5.5vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 11.5% 18% 41% 2% 32% 0%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(5.2vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -12vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.5vw;
+        margin-top: 3vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7.6vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-10vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-11.54vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.8rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(-9vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-2vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    
+    @media (max-width: 768px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 40vw;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 22vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 4.5vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 4.9vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 10% 30% 30% 2% 30% 0%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 1rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 35px;
+        width: 45px;
+      }
+      .clear-cart-button {
+        transform: translateX(5vw);
+        font-size: 0.63rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -12vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.5vw;
+        margin-top: 3vh;
+        font-size: 1.9rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7.6vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-10vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-11.45vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.8rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 1rem;
+        transform: translateY(-9vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-2vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 720px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 13%;
+        width: 40vh;
+        height: 48vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 23vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 1rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 6vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5vw);
+        grid-template-rows: repeat(3, 5.2vh);
+        padding: 0 3.3vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 7% 20% 32% 10% 0% 10%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.1vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -10vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 8vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-8vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-9.4vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 700px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 37vh;
+        height: 47vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 25vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 2vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5.2vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 2.9vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 7% 20% 25% 12% 0% 10%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.4vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -7.2vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-6vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-7.3vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+  
+    @media (max-width: 630px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 37vh;
+        height: 47vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 27vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 0.7rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 5.9vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 2.9vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 7% 20% 25% 12% 0% 10%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.4vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -7.2vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-6vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-7.1vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+    @media (max-width: 570px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 37vh;
+        height: 47vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 28vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 0.7rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 6.4vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 2.5vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 7% 20% 25% 12% 0% 10%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.4vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -7.2vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+
+      }
+    
+      .filter-button {
+        transform: translateX(-6vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-7.1vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 530px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 37vh;
+        height: 47vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 31vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 0.7rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 6.4vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 4.5vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 7% 20% 25% 12% 0% 10%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.1vw);
+        font-size: 0.7rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -2.5vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-1vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-1.8vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1.1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 480px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 33vh;
+        height: 47vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 32vw;
+        height: 43vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 0.7rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 7.5vw);
+        grid-template-rows: repeat(3, 5vh);
+        padding: 0 0.5vw;
+        margin: 1vh 0;
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 30% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.8rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 2rem;
+        height: 25px;
+        width: 35px;
+      }
+      .clear-cart-button {
+        transform: translateX(1.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -4vw;
+        width: 100%;
+        height: 20vh;
+      }
+    
+      .postit-total-selected {
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+        font-size: 1.7rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 7vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-3vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.9rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-3.7vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.9rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 1rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.8rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(0.1vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+
+    @media (max-width: 450px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 10%;
+        width: 33vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 80%;
+        height: 28vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 7vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 3vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 30% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -2vw;
+        width: 100%;
+        height: 18vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 1vw;
+        margin-top: 5.5vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(-1vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-1.5vw);
+        width: 27.9vw;
+        height: 3vh;
+        font-size: 0.65rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.9rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-8vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1.5vw);
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-6.3vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 430px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 7%;
+        width: 30vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 26vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 10vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 2.6vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 19% 13% 40% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(-0.1vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 3vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.2vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 5.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(6vw);
+        height: 3vh;
+        width: 22vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(2.7vw);
+        width: 22vw;
+        height: 3vh;
+        font-size: 0.7rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+    @media (max-width: 420px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 7%;
+        width: 30vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 23vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 8vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 0.3vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 30% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -1vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(0vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-0.2vw);
+        width: 28vw;
+        height: 3vh;
+        font-size: 0.7rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+    @media (max-width: 414px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 7%;
+        width: 28vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 23vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 10vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 0.7vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 17% 20% 30% 0% 0% 25%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.5rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(6.4vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 2.3vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+        
+      }
+    
+      .filter-button {
+        transform: translateX(7vw);
+        height: 3vh;
+        width: 20vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(2.6vw);
+        width: 20vw;
+        height: 3vh;
+        font-size: 0.7rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+    @media (max-width: 412px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 7%;
+        width: 28vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 23vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 10.45vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 0.3vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 16% 18% 30% 0% 0% 25%;
+
+        height: 9vh;
+      
+
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(6.8vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 2.3vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 5vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+        
+      }
+    
+      .filter-button {
+        transform: translateX(7vw);
+        height: 3vh;
+        width: 20vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(2.6vw);
+        width: 20vw;
+        height: 3vh;
+        font-size: 0.55rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+    @media (max-width: 375px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 7%;
+        width: 28vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 90%;
+        height: 23vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 0.7rem;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 8.1vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        margin-left: -1.2vw;
+        padding: 0 0vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 14% 24% 30% 15% 0% 20%;
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.5rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -7vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 0.8rem;
+        margin-left: 1.4vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.6vh;
+        font-size: 2rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+        
+      }
+    
+      .filter-button {
+        transform: translateX(-4vw);
+        height: 3vh;
+        width: 26vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(-5vw);
+        width: 26vw;
+        height: 3vh;
+        font-size: 0.7rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+    @media (max-width: 360px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 5%;
+        width: 29vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 20vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 9.5vw);
+        grid-template-rows: repeat(3, 4.5vh);
+        padding: 0 1.2vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 20% 20% 28% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: -0.5vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(0vw);
+        height: 3vh;
+        width: 28vw;
+        font-size: 0.7rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(0vw);
+        width: 28vw;
+        height: 3vh;
+        font-size: 0.7rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+    }
+
+    @media (max-width: 350px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 5%;
+        width: 29vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 28vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 10vw);
+        grid-template-rows: repeat(3, 5vh);
+        margin-left: -2.6vw;
+        padding: 0 0.2vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 15% 25% 30% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.4vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 3vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(6vw);
+        height: 3vh;
+        width: 20vw;
+        font-size: 0.5rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(2.2vw);
+        width: 20vw;
+        height: 3vh;
+        font-size: 0.5rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+    @media (max-width: 320px) {
+      .programm-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        
+        gap: 0;
+      }
+    
+      .exercises-container {
+        width: 100%;
+        height: 50%;
+        padding: 2vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+      }
+    
+      .exercises-card-container {
+        margin-left: 5%;
+        width: 29vh;
+        height: 46vh;
+      }
+      .anatomy-container,
+      .sticker-diagramm {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+    
+      .card-exercises-screen { 
+        width: 85%;
+        height: 28vh;
+        
+      }
+    
+      .gifScreen {
+        width: 90%;
+        height: 90%;
+      }
+    
+      .select-exercise-overlay .select-text {
+        font-size: 3.5vw;
+        word-spacing: 0.1rem;
+      }
+    
+      .select-exercise-overlay .arrow-indicator {
+        font-size: 8vw;
+      }
+    
+      .productsStyle {
+        width: 80%;
+        grid-template-columns: repeat(4, 11vw);
+        grid-template-rows: repeat(3, 5vh);
+        margin-left: -2.6vw;
+        padding: 0 0vw;
+      
+      }
+    
+      .buttonproductcartstyle {
+      
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .imageproductcartstyle {
+        width: 95%;
+        height: 95%;
+        border-radius: 8px;
+      }
+    
+      .paginationproductcart {
+        grid-template-columns: 12% 25% 30% 15% 0% 20%;
+
+        height: 9vh;
+      }
+
+      .buttonproductcartleft {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+        
+      }
+
+      .page-info-home {
+        
+        font-size: 0.7rem;
+      }
+      
+      .buttonproductcartright {
+        font-size: 1rem;
+        height: 15px;
+        width: 25px;
+      }
+      .clear-cart-button {
+        transform: translateX(0.5vw);
+        font-size: 0.5rem;
+        padding: 1vh 1vw;
+      }
+    
+      .postit-container {
+        height: 70vh;
+        
+      }
+    
+      .postitCartStyle {
+        margin-left: 3vw;
+        width: 100%;
+        height: 14.5vh;
+      }
+    
+      .postit-total-selected {
+        font-size: 1.2rem;
+        margin-left: 1.5vw;
+        margin-top: 2vh;
+      }
+    
+      .postitSpanstyle {
+        margin-left: 2vw;
+        margin-top: 4.2vh;
+        font-size: 2.5rem;
+      }
+      .floating-indicator-postit.plus {
+        font-size: 2.5rem;
+      }
+
+      .floating-indicator-postit.minus {
+        font-size: 2.5rem;
+      }
+    
+      .filter-container {
+        height: 21.34vh;
+        gap: 0.3vh;
+      }
+    
+      .filter-button {
+        transform: translateX(6vw);
+        height: 3vh;
+        width: 20vw;
+        font-size: 0.5rem;
+        padding: 0.1vh;
+      }
+
+      .clear-filters-button {
+        transform: translateX(2.2vw);
+        width: 20vw;
+        height: 3vh;
+        font-size: 0.5rem;
+        
+      }
+    
+      .typewriter {
+        font-size: 0.6rem;
+        word-spacing: 0.2vw;
+      }
+
+      
+      
+      .set-exercises-button {
+        margin-right: 4vw;
+        font-size: 0.6rem;
+        transform: translateY(-5vh);
+        
+      }
+
+      .diagram-container {
+        transform: translateX(-1vw);
+        width: 100%;
+        height: 50%;
+        padding: 6.3vh 2vw;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+
+      }
+
+      .anatomy-container  {
+        
+        transform: translateY(-5vh);
+      }
+
+      #image-muscles {
+        opacity: 100%;
+        filter: brightness(95%);
+      }
+      
+    }
+
+
+
+
+
+
+
+    
+    
