@@ -18,9 +18,8 @@ Tech Stack
 - **React**
 - **Redux Toolkit**
 - **React Router**
-- **SCSS** (modular styling)
+- **Sass** (modular styling)
 - **Vite** (fast dev environment)
-- **GitHub Pages** (deployment)
 
 Notes
 
@@ -31,4 +30,4 @@ Author
 
 Jerome Collombier
 
-Frontend Developer
+Front-End Developer
